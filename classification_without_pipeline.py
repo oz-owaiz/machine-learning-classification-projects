@@ -205,7 +205,7 @@ replaces it with it numerical value.
 
 Then the original column is dropped and replaced with the new education numerical column 
 """
-education_order = {"High School": 1, "Bachelor": 2, "Master": 3, "PHD": 4}
+education_order = {"High School": 1, "Bachelor": 2, "Master": 3, "PhD": 4}
 
 X_train["education_encoded"] = X_train["education"].map(education_order)
 X_test["education_encoded"] = X_test["education"].map(education_order)
@@ -237,7 +237,7 @@ or selecting features to help a Machine Learning model learn more effectively.
 """
 for data_part in [X_train, X_test]:
     # Experience relative to age
-    data_part["experience_ration"] = data_part["experience_years"] / data_part[
+    data_part["experience_ratio"] = data_part["experience_years"] / data_part[
         "age"
     ].replace(0, np.nan)
 
