@@ -205,7 +205,7 @@ benefits as for numeric pipeline
 categorical_pipeline = Pipeline(
     [
         ("imputer", SimpleImputer(strategy="most_frequent")),
-        ("scaler", OneHotEncoder(handle_unknown="ignore")),
+        ("encoder", OneHotEncoder(handle_unknown="ignore")),
     ]
 )
 
@@ -234,7 +234,7 @@ and the model into one object which makes the whole workflow run smoothly.
 Benefits of Model pipeline is it prevents data leakage, easy to deploy,
 fewer mistakes, and most importantly easy to tune and swap.
 """
-# Creating a Linear Regression Pipeline
+# Creating a Logistic Regression Pipeline
 lr_pipeline = Pipeline(
     [("preprocessor", preprocessor), ("classifier", LogisticRegression(max_iter=1000))]
 )
@@ -260,12 +260,11 @@ cv_results = {}
 
 for name, model in models.items():
     scores = cross_val_score(model, X_train, y_train, cv=5, scoring="f1", n_jobs=-1)
+    cv_results[name] = scores.mean()
 
-cv_results[name] = scores.mean()
-
-print(f"\n{name}")
-print("F1 Scores:", scores)
-print("Mean CV F1:", round(scores.mean()), 4)
+    print(f"\n{name}")
+    print("F1 Scores:", scores)
+    print("Mean CV F1:", round(scores.mean(), 4))
 
 
 # ===================================================================
@@ -352,7 +351,7 @@ print("Recall:", round(recall_score(y_test, y_pred, zero_division=0), 4))
 
 print("F1 Score:", round(f1_score(y_test, y_pred, zero_division=0), 4))
 
-print("ROC-AUC:"), round(roc_auc_score(y_test, y_prob), 4)
+print("ROC-AUC:", round(roc_auc_score(y_test, y_prob), 4))
 
 print("\nClassification Report:")
 print(classification_report(y_test, y_pred, zero_division=0))
