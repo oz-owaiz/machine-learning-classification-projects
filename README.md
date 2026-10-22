@@ -20,6 +20,7 @@ Demonstrates explicit preprocessing steps, feature engineering, model training, 
 
 ### 3. Titanic Survival Classification
 
+**Project guide:** [`titanic/README.md`](titanic/README.md)  
 **Script:** [`titanic/titanic_classification_ml_project.py`](titanic/titanic_classification_ml_project.py)
 
 This project uses the Kaggle Titanic training dataset to predict whether a passenger survived.
@@ -44,6 +45,7 @@ machine-learning-classification-projects/
 ├── classification_with_pipeline.py
 ├── classification_without_pipeline.py
 ├── titanic/
+│   ├── README.md
 │   └── titanic_classification_ml_project.py
 ├── requirements.txt
 ├── README.md
