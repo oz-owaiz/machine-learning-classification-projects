@@ -5,6 +5,7 @@ import joblib
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
+from pathlib import Path
 
 from sklearn.compose import ColumnTransformer
 from sklearn.ensemble import RandomForestClassifier
@@ -30,7 +31,8 @@ sns.set_theme()
 # Step 1: Load the dataset
 # -------------------------------------------------------------------
 # Place the Kaggle training dataset in this folder as titanic_dataset.csv.
-df = pd.read_csv("titanic_dataset.csv")
+DATA_PATH = Path(__file__).resolve().parent / "titanic_dataset.csv"
+df = pd.read_csv(DATA_PATH)
 
 
 # -------------------------------------------------------------------
