@@ -98,3 +98,11 @@ The Titanic script saves `titanic_classification_ml_project.pkl` in the current 
 - Evaluation results can vary with data, library versions, and modelling choices.
 - Keep the held-out test set for final evaluation rather than repeatedly using it to choose features or models.
 - This is a learning portfolio project, not a production-ready or deployed prediction service.
+
+## Author
+
+**Owais Ali**
+
+Aspiring Machine Learning / AI Engineer
+
+GitHub: https://github.com/oz-owaiz
